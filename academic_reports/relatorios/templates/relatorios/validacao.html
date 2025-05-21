@@ -1,0 +1,11 @@
+{% extends "relatorios/base.html" %}
+{% block content %}
+<div class="card p-4">
+  <h2>Validar Relatório</h2>
+  <h3>{{ relatorio.atividade.titulo }}</h3>
+  <p>Enviado em {{ relatorio.data_envio|date:"d/m/Y H:i" }}</p>
+  <form method="post">{% csrf_token %}
+    <button type="submit" class="btn btn-success">✅ Validar</button>
+  </form>
+</div>
+{% endblock %}

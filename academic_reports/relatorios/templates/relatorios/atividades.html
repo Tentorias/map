@@ -1,0 +1,18 @@
+{% extends "relatorios/base.html" %}
+{% block content %}
+<div class="card p-4">
+  <h1>Atividades em andamento</h1>
+  <ul class="list-group">
+    {% for a in atividades %}
+      <li class="list-group-item d-flex justify-content-between">
+        {{ a.data_inicio|date:"d/m/Y" }} –
+        <span class="badge bg-{{ a.status|lower }}">{{ a.get_status_display }}</span> –
+        {{ a.titulo }}
+        <a href="#" class="btn btn-sm btn-outline-primary">Detalhes</a>
+      </li>
+    {% empty %}
+      <li class="list-group-item">Nenhuma atividade.</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

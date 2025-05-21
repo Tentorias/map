@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+*.log
+
+# Django
+*.sqlite3
+db.sqlite3
+.env
+*.env
+
+# VSCode
+.vscode/
+
+# Virtualenv
+venv/
+env/

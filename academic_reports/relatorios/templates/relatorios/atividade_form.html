@@ -1,0 +1,28 @@
+<!-- atividades_form -->
+
+
+{% extends 'relatorios/base.html' %}
+
+{% block content %}
+<div class="card p-4">
+  <h2 class="mb-4">Solicitar Nova Atividade</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      {{ form.titulo.label_tag }}
+      {{ form.titulo }}
+    </div>
+    <div class="mb-3">
+      {{ form.tipo.label_tag }}
+      {{ form.tipo }}
+    </div>
+    <div class="mb-3">
+      {{ form.data_inicio.label_tag }}
+      {{ form.data_inicio }}
+    </div>
+    <button type="submit" class="btn btn-success">Enviar</button>
+    <a href="{% url 'relatorios:atividades' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}
+
