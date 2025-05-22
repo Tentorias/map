@@ -4,15 +4,15 @@
   <h1>Relatórios</h1>
   <div class="card mt-3">
     <h3>Relatório de Estágio</h3>
-    <a href="#" class="btn btn-outline-primary">Visualizar</a>
+    <a href="{% url 'relatorios:visualizar_relatorio' 'estagio' %}" class="btn btn-outline-primary btn-block">Visualizar</a>
   </div>
   <div class="card mt-3">
     <h3>Relatório de Monitoria</h3>
-    <a href="#" class="btn btn-outline-primary">Visualizar</a>
+    <a href="{% url 'relatorios:visualizar_relatorio' 'monitoria' %}" class="btn btn-outline-primary btn-block">Visualizar</a>
   </div>
   <div class="card mt-3">
     <h3>Relatório de Extensão</h3>
-    <a href="#" class="btn btn-outline-primary">Visualizar</a>
+    <a href="{% url 'relatorios:visualizar_relatorio' 'extensao' %}" class="btn btn-outline-primary btn-block">Visualizar</a>
   </div>
 </div>
 {% endblock %}

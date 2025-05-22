@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404, redirect
-# from django.contrib.auth.decorators import login_required
 from .models import Atividade, Relatorio
 from .forms import AtividadeForm
 
@@ -33,7 +32,6 @@ def atividade_nova(request):
         ativ.save()
         return redirect('relatorios:atividades')
 
-    # Se o form for inválido, reexibe com erros
     return render(request, 'relatorios/atividade_form.html', {'form': form})
 
 def relatorios(request):
@@ -46,3 +44,6 @@ def validar_relatorio(request, id):
         rel.save()
         return redirect('relatorios:relatorios')
     return render(request, 'relatorios/validacao.html', {'relatorio': rel})
+
+def visualizar_relatorio(request, tipo):
+    return render(request, 'relatorios/relatorio_form.html', {'tipo': tipo})
